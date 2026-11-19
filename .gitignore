@@ -1,0 +1,10 @@
+/.gradle/
+/build/
+/local.properties
+/keystore.properties
+/*.jks
+/*.keystore
+/.idea
+/src/main/assets/emoji-art.emojipack
+/src/main/assets/emoji-index/
+__pycache__/
