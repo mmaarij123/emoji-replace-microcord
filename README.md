@@ -34,4 +34,4 @@ Run the picker-cell regression tests with `./gradlew testDebugUnitTest` or `grad
 
 The original plugin source is available under the [MIT License](LICENSE). The Android project uses the [Microcord plugin template](https://github.com/microcord/plugin-template). The Gradle wrapper carries its own license in its JAR.
 
-The pack builder draws artwork from [DevilBro's EmojiReplace project](https://github.com/mwittrien/BetterDiscordAddons/tree/9ea61dfba5599b1c8205d261fbbe35bf683120ab/Themes/EmojiReplace) and converts the images to WebP at up to 96 pixels per side. The public repository contains plugin source and the local artwork builder. Vendor artwork retains its respective terms.
+The pack builder draws artwork from [DevilBro's EmojiReplace project](https://github.com/mwittrien/BetterDiscordAddons/tree/9ea61dfba5599b1c8205d261fbbe35bf683120ab/Themes/EmojiReplace) and converts the images to WebP at up to 46 pixels per side to fit Microcord's 50 MiB plugin browser limit. The public repository contains plugin source and the local artwork builder. Vendor artwork retains its respective terms.

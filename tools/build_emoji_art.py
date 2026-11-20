@@ -18,6 +18,8 @@ PROVIDERS = (
 CATEGORIES = ("people", "nature", "food", "activity", "travel", "objects", "symbols", "flags")
 NAME = re.compile(r"[a-z0-9_+\-]+\.png", re.ASCII)
 ASSETS = Path(__file__).resolve().parents[1] / "src/main/assets"
+# Microcord's catalog accepts APKs up to 50 MiB. Leave space for code and the indexes.
+MAX_ARTWORK_BYTES = 49 * 2**20
 
 
 def provider_files(root, provider):
@@ -39,9 +41,9 @@ def encode(item):
     origin = sha256(data).digest()
     with Image.open(BytesIO(data)) as image:
         rgba = image.convert("RGBA")
-        rgba.thumbnail((96, 96), Image.Resampling.LANCZOS)
+        rgba.thumbnail((46, 46), Image.Resampling.LANCZOS)
         output = BytesIO()
-        rgba.save(output, format="WEBP", quality=88, method=3)
+        rgba.save(output, format="WEBP", quality=70, method=5)
     return name, origin, output.getvalue()
 
 
@@ -69,6 +71,8 @@ def main():
                         offset, length = offsets[key]
                         index.write(f"{name}\t{offset}\t{length}\n")
                 print(f"{provider}: {len(images)} emojis", flush=True)
+        if bank.stat().st_size > MAX_ARTWORK_BYTES:
+            raise ValueError("Generated artwork exceeds the budget for Microcord's plugin catalog")
         for provider in PROVIDERS:
             (staging / f"{provider}.tsv").replace(index_dir / f"{provider}.tsv")
         bank.replace(ASSETS / bank.name)
