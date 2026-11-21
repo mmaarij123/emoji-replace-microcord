@@ -10,6 +10,12 @@ All available artwork from the 13 upstream packs is included for offline use. An
 
 After opening the emoji picker, use **Settings → Check emoji replacement** in the plugin to see active native resources, chat matches, picker cells and image decoding errors.
 
+## APK versions
+
+**v1.4.0** has better emoji image quality, especially for large emojis in chat. It keeps artwork up to 96 px per side, but its APK is roughly 140 MiB (149 MB) and requires manual installation. [Download v1.4.0](https://github.com/mmaarij123/emoji-replace-microcord/releases/tag/v1.4.0)
+
+**v1.4.1** keeps all 13 packs offline and reduces artwork to 46 px per side. Its 49.1 MiB APK fits Microcord’s 50 MiB plugin browser limit. [Download v1.4.1](https://github.com/mmaarij123/emoji-replace-microcord/releases/tag/v1.4.1)
+
 ## Build from source
 
 Use JDK 21, Android SDK Platform 36.1, Python and Pillow. From the plugin repository, fetch the pinned artwork checkout and generate the assets locally.
