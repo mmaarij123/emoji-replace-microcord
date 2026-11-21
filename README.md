@@ -1,27 +1,35 @@
 # Emoji Replace for Microcord
 
-Emoji Replace changes the artwork of standard Unicode emojis in chat messages and the emoji picker grid. The change is local to Microcord on your device. On Android 11 and later, Microcord's native emoji resources also use the bundled pack artwork, including when a reaction chip renders it.
+Emoji Replace lets you change how built-in emojis look in Microcord on your device. The selected style appears in chat and the emoji picker. On Android 11 and later it also applies to built-in emoji reactions.
 
-Install the APK, open **Microcord → Settings → Plugins**, and enable **Emoji Replace**. Approve the signing certificate if Microcord prompts you. Open the plugin's **Settings → Emoji pack** to switch styles. Apple is selected by default. **Default (Discord)** restores Microcord's usual artwork.
+It includes 13 offline packs (Apple, BlobMoji, Facebook, Google, Huawei, JoyPixels, Microsoft, Microsoft-3D, OpenMoji, Samsung, Samsung-Old, Toss, and WhatsApp). If a pack is missing an emoji, Microcord shows its usual artwork for that emoji.
 
-The selector includes Apple, BlobMoji, Facebook, Google, Huawei, JoyPixels, Microsoft, Microsoft-3D, OpenMoji, Samsung, Samsung-Old, Toss, and WhatsApp.
+## Install from GitHub Releases
 
-All available artwork from the 13 upstream packs is included for offline use. An emoji keeps Microcord's built-in art if the selected pack has no matching image. Server emoji uploads use their own artwork.
+1. Choose one of the APKs from the [latest GitHub release](https://github.com/mmaarij123/emoji-replace-microcord/releases/latest). If you have v1.4.1 or earlier installed, uninstall that version first.
+2. Open the downloaded APK on your Android device and install it.
+3. Open **Microcord → Settings → Plugins** and enable **Emoji Replace**. Approve the signing certificate if Microcord prompts you.
 
-After opening the emoji picker, use **Settings → Check emoji replacement** in the plugin to see active native resources, chat matches, picker cells and image decoding errors.
+### APK versions
 
-## APK versions
+- **Full quality (141.7 MiB)** uses the same higher-quality artwork as v1.4.0. [Download full-quality APK](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2-Full.apk)
+- **Compressed (49.1 MiB)** includes the same packs in a smaller download and fits Microcord’s 50 MiB plugin browser limit. [Download compressed APK](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2.apk)
 
-Both v1.4.2 builds include all 13 offline packs and use the package `io.github.mmaarij123.emojireplace`.
+## Change your emoji pack
 
-- **Full quality** includes the same artwork as v1.4.0 at up to 96 px per side. The 141.7 MiB APK requires manual installation. [Download full quality](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2-Full.apk)
-- **Compressed** uses artwork up to 46 px per side. The 49.1 MiB APK fits Microcord’s 50 MiB plugin browser limit. [Download compressed](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2.apk)
+Tap the gear next to **Emoji Replace** and open **Emoji pack**. Apple is selected by default. Choose **Default (Discord)** to restore Microcord’s usual emojis.
 
-If you already have an older Emoji Replace version, remove it before enabling v1.4.2. Android installs v1.4.2 separately because it uses the new package name `io.github.mmaarij123.emojireplace`.
+If emojis aren’t changing, open the picker once and then tap **Check emoji replacement** in the plugin settings.
 
-## Build from source
+## Technical details
 
-Use JDK 21, Android SDK Platform 36.1, Python and Pillow. From the plugin repository, fetch the pinned artwork checkout and generate the assets locally.
+Emoji Replace is a native Kotlin plugin for Microcord plugin API level 2 or later. Both APKs use the Android package `io.github.mmaarij123.emojireplace`.
+
+The plugin uses Microcord’s message decorator API to replace built-in emoji images in chat and updates the native picker grid as its cells are bound. On Android 11 and later, it also uses Android’s `ResourcesLoader` to supply pack artwork for Microcord’s bundled emoji resources, including reactions.
+
+### Build from source
+
+Use JDK 21, Android SDK Platform 36.1, and Python with Pillow. From the plugin repository root, fetch the pinned artwork checkout and generate the assets locally. The builder bundles the artwork as indexed WebP images. The default build uses up to 46 px per side. The full-quality build uses up to 96 px per side.
 
 ```sh
 git init ../BetterDiscordAddons
@@ -37,7 +45,7 @@ python tools/build_emoji_art.py ../BetterDiscordAddons
 
 For the full-quality APK, add `--full` to the artwork generation command before building.
 
-Run `./gradlew assembleDebug` on macOS or Linux, or `gradlew.bat assembleDebug` on Windows. The APK is built under `build/outputs/apk/debug`. The plugin requires Microcord plugin API level 2 or later.
+Run `./gradlew assembleDebug` on macOS or Linux, or `gradlew.bat assembleDebug` on Windows. The APK is built under `build/outputs/apk/debug`.
 
 Run the picker-cell regression tests with `./gradlew testDebugUnitTest` or `gradlew.bat testDebugUnitTest`.
 
