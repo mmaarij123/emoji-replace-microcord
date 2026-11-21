@@ -1,4 +1,4 @@
-package dev.mantikafasi.manticord.emojireplace
+package io.github.mmaarij123.emojireplace
 
 import android.content.Context
 import android.graphics.BitmapFactory

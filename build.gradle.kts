@@ -12,7 +12,7 @@ val releaseSigning = Properties().apply {
 
 manticordPlugin {
     id.set("emojireplace")
-    entrypoint.set("dev.mantikafasi.manticord.emojireplace.EmojiReplacePlugin")
+    entrypoint.set("io.github.mmaarij123.emojireplace.EmojiReplacePlugin")
     description.set("Choose a style for standard emojis in chat and the emoji picker.")
     manticordVersionMinimum.set(2)
     manticordVersionMaximumExclusive.set(Int.MAX_VALUE)
@@ -21,7 +21,7 @@ manticordPlugin {
 }
 
 android {
-    namespace = "dev.mantikafasi.manticord.emojireplace"
+    namespace = "io.github.mmaarij123.emojireplace"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -29,11 +29,11 @@ android {
     }
 
     defaultConfig {
-        applicationId = "dev.mantikafasi.manticord.emojireplace"
+        applicationId = "io.github.mmaarij123.emojireplace"
         minSdk = 23
         targetSdk = 36
-        versionCode = 6
-        versionName = "1.4.1"
+        versionCode = 7
+        versionName = "1.4.2"
     }
 
     signingConfigs {

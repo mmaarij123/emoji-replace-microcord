@@ -14,7 +14,9 @@ After opening the emoji picker, use **Settings → Check emoji replacement** in 
 
 **v1.4.0** has better emoji image quality, especially for large emojis in chat. It keeps artwork up to 96 px per side, but its APK is roughly 140 MiB (149 MB) and requires manual installation. [Download v1.4.0](https://github.com/mmaarij123/emoji-replace-microcord/releases/tag/v1.4.0)
 
-**v1.4.1** keeps all 13 packs offline and reduces artwork to 46 px per side. Its 49.1 MiB APK fits Microcord’s 50 MiB plugin browser limit. [Download v1.4.1](https://github.com/mmaarij123/emoji-replace-microcord/releases/tag/v1.4.1)
+**v1.4.2** keeps all 13 packs offline with artwork up to 46 px per side. Its 49.1 MiB APK fits Microcord’s 50 MiB plugin browser limit. [Download v1.4.2](https://github.com/mmaarij123/emoji-replace-microcord/releases/tag/v1.4.2)
+
+If you already have an older Emoji Replace version, remove it before enabling v1.4.2. Android installs v1.4.2 separately because it uses the new package name `io.github.mmaarij123.emojireplace`.
 
 ## Build from source
 
