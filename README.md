@@ -51,6 +51,6 @@ Run the picker-cell regression tests with `./gradlew testDebugUnitTest` or `grad
 
 ## License
 
-The original plugin source is available under the [MIT License](LICENSE). The Android project uses the [Microcord plugin template](https://github.com/microcord/plugin-template). The Gradle wrapper carries its own license in its JAR.
+The original Emoji Replace plugin code and local artwork builder are licensed under MIT. Copyright © 2026 Maarij (mmaarij123). You may use, copy, modify, and redistribute the code, including for commercial use. Include the copyright notice and permission notice with copies or substantial portions of the code. The code is provided as is, without warranty. The full terms include a limitation of liability. [Read the MIT license](LICENSE)
 
-The pack builder draws artwork from [DevilBro's EmojiReplace project](https://github.com/mwittrien/BetterDiscordAddons/tree/9ea61dfba5599b1c8205d261fbbe35bf683120ab/Themes/EmojiReplace) and converts the images to WebP. The public repository contains plugin source and the local artwork builder. Vendor artwork retains its respective terms.
+The emoji artwork in the release APKs follows the terms for each pack. See the notices for the artwork source, WebP conversion, and OpenMoji attribution. [Third-party notices](THIRD_PARTY_NOTICES.md)
