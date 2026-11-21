@@ -10,11 +10,11 @@ All available artwork from the 13 upstream packs is included for offline use. An
 
 After opening the emoji picker, use **Settings → Check emoji replacement** in the plugin to see active native resources, chat matches, picker cells and image decoding errors.
 
-## Download v1.4.2
+## APK versions
 
-Both builds include all 13 offline packs and use the package `io.github.mmaarij123.emojireplace`. Choose one APK:
+Both v1.4.2 builds include all 13 offline packs and use the package `io.github.mmaarij123.emojireplace`.
 
-- **Full quality** includes the same artwork as v1.4.0 at up to 96 px per side. The 142 MiB APK requires manual installation. [Download full quality](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2-Full.apk)
+- **Full quality** includes the same artwork as v1.4.0 at up to 96 px per side. The 141.7 MiB APK requires manual installation. [Download full quality](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2-Full.apk)
 - **Compressed** uses artwork up to 46 px per side. The 49.1 MiB APK fits Microcord’s 50 MiB plugin browser limit. [Download compressed](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2.apk)
 
 If you already have an older Emoji Replace version, remove it before enabling v1.4.2. Android installs v1.4.2 separately because it uses the new package name `io.github.mmaarij123.emojireplace`.
