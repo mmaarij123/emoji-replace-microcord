@@ -10,11 +10,12 @@ All available artwork from the 13 upstream packs is included for offline use. An
 
 After opening the emoji picker, use **Settings → Check emoji replacement** in the plugin to see active native resources, chat matches, picker cells and image decoding errors.
 
-## APK versions
+## Download v1.4.2
 
-**v1.4.0** has better emoji image quality, especially for large emojis in chat. It keeps artwork up to 96 px per side, but its APK is roughly 140 MiB (149 MB) and requires manual installation. [Download v1.4.0](https://github.com/mmaarij123/emoji-replace-microcord/releases/tag/v1.4.0)
+Both builds include all 13 offline packs and use the package `io.github.mmaarij123.emojireplace`. Choose one APK:
 
-**v1.4.2** keeps all 13 packs offline with artwork up to 46 px per side. Its 49.1 MiB APK fits Microcord’s 50 MiB plugin browser limit. [Download v1.4.2](https://github.com/mmaarij123/emoji-replace-microcord/releases/tag/v1.4.2)
+- **Full quality** includes the same artwork as v1.4.0 at up to 96 px per side. The 142 MiB APK requires manual installation. [Download full quality](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2-Full.apk)
+- **Compressed** uses artwork up to 46 px per side. The 49.1 MiB APK fits Microcord’s 50 MiB plugin browser limit. [Download compressed](https://github.com/mmaarij123/emoji-replace-microcord/releases/download/v1.4.2/Emoji-Replace-1.4.2.apk)
 
 If you already have an older Emoji Replace version, remove it before enabling v1.4.2. Android installs v1.4.2 separately because it uses the new package name `io.github.mmaarij123.emojireplace`.
 
@@ -34,6 +35,8 @@ python -m pip install Pillow==13.0.0
 python tools/build_emoji_art.py ../BetterDiscordAddons
 ```
 
+For the full-quality APK, add `--full` to the artwork generation command before building.
+
 Run `./gradlew assembleDebug` on macOS or Linux, or `gradlew.bat assembleDebug` on Windows. The APK is built under `build/outputs/apk/debug`. The plugin requires Microcord plugin API level 2 or later.
 
 Run the picker-cell regression tests with `./gradlew testDebugUnitTest` or `gradlew.bat testDebugUnitTest`.
@@ -42,4 +45,4 @@ Run the picker-cell regression tests with `./gradlew testDebugUnitTest` or `grad
 
 The original plugin source is available under the [MIT License](LICENSE). The Android project uses the [Microcord plugin template](https://github.com/microcord/plugin-template). The Gradle wrapper carries its own license in its JAR.
 
-The pack builder draws artwork from [DevilBro's EmojiReplace project](https://github.com/mwittrien/BetterDiscordAddons/tree/9ea61dfba5599b1c8205d261fbbe35bf683120ab/Themes/EmojiReplace) and converts the images to WebP at up to 46 pixels per side to fit Microcord's 50 MiB plugin browser limit. The public repository contains plugin source and the local artwork builder. Vendor artwork retains its respective terms.
+The pack builder draws artwork from [DevilBro's EmojiReplace project](https://github.com/mwittrien/BetterDiscordAddons/tree/9ea61dfba5599b1c8205d261fbbe35bf683120ab/Themes/EmojiReplace) and converts the images to WebP. The public repository contains plugin source and the local artwork builder. Vendor artwork retains its respective terms.
